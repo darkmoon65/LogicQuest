@@ -46,6 +46,7 @@ const TopBar = () => {
               zIndex: "100",
               top: "0",
               paddingLeft: "5px",
+              textAlign: "center",
             }}
           >
             {" "}
