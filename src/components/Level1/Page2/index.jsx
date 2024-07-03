@@ -8,6 +8,7 @@ const Page2 = () => {
   const [showSecondMessage, setShowSecondMessage] = useState(false);
   const [showThirdMessage, setShowThirdMessage] = useState(false);
   const [showFourthMessage, setShowFourthMessage] = useState(false);
+  const [showButton, setShowButton] = useState(false);
 
   const messageProps1 = useSpring({
     opacity: showSecondMessage ? 1 : 0,
@@ -25,6 +26,22 @@ const Page2 = () => {
     opacity: showFourthMessage ? 1 : 0,
     from: { opacity: 0 },
     config: { duration: 500 },
+    onRest: () => setShowButton(true),
+  });
+
+  const buttonProps = useSpring({
+    background: `linear-gradient(to bottom, #FBDD86, #BB6500)`,
+    borderRadius: "8px",
+    border: "none",
+    cursor: "pointer",
+    boxShadow: "0px 0px 20px rgba(99, 0, 134, 0.8)",
+    config: { tension: 200, friction: 10 },
+    color: "black",
+    fontWeight: "900",
+    padding: "5px",
+    opacity: showButton ? 1 : 0,
+    transform: showButton ? "translateY(0px)" : "translateY(10px)",
+    from: { opacity: 0, transform: "translateY(10px)" },
   });
 
   useEffect(() => {
@@ -68,6 +85,13 @@ const Page2 = () => {
         <animated.div style={messageProps3}>
           <BoxLeft messageLeft="Empezaremos por el tipo de dato ENTERO" />
         </animated.div>
+        <animated.button
+          style={buttonProps}
+          className="start-button"
+          onClick={() => {}}
+        >
+          INICIAR
+        </animated.button>
       </div>
     </div>
   );
