@@ -9,7 +9,6 @@ const Page2 = () => {
   const [showThirdMessage, setShowThirdMessage] = useState(false);
   const [showFourthMessage, setShowFourthMessage] = useState(false);
 
-  // Configuración de animaciones para los mensajes
   const messageProps1 = useSpring({
     opacity: showSecondMessage ? 1 : 0,
     from: { opacity: 0 },
