@@ -20,7 +20,7 @@ const ItemMenu = ({ img, isDisabled }) => {
       }
       onClick={handleCLick}
     >
-      <img src={img} style={{ opacity: isDisabled ? 0.4 : 1 }} />
+      <img src={img} style={{ opacity: isDisabled ? 0.4 : 1, width: "80px" }} />
     </div>
   );
 };
