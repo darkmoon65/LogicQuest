@@ -1,0 +1,8 @@
+.container {
+  background-color: rgb(20, 15, 50, 0.6);
+  background-image: url("../assets/fondo.png");
+  background-size: cover;
+  background-blend-mode: overlay;
+  height: 100vh;
+  width: 100vw;
+}
