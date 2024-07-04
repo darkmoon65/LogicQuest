@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
-import TopBar from "../TopBar";
+import TopBar from "../TopBar/index.jsx";
 import BoxLeft from "../../BoxLeft/index.jsx";
 import BoxRight from "../../BoxRight/index.jsx";
 import { useNavigate } from "react-router-dom";
