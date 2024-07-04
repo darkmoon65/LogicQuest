@@ -27,28 +27,15 @@ const Page1 = () => {
         <span style={{ fontSize: "30px", textAlign: "center" }}>
           Selecciona y arrastra los valores enteros
         </span>
-        <NubeDrag openModal={() => setIsModalOpen(true)} />
+        <NubeDrag openModal={() => setIsModalOpenRecuerda(true)} />
         <div>
           <button onClick={() => setIsModalOpen(true)}>Abrir Modal</button>
-          {isModalOpen && (
-            <FelicidadesUno onClose={() => setIsModalOpen(false)} />
-          )}
-        </div>{" "}
-        {/* <div>
-          <button onClick={() => setIsModalOpenRecuerda(true)}>
-            Abrir Recuerda
-          </button>
           {isModalOpenRecuerda && (
             <Recuerda onCloseRecuerda={() => setIsModalOpenRecuerda(false)} />
           )}
-        </div> */}
-        <div>
-          <button onClick={() => setIsModalOpenPartesVariable(true)}>
-            Abrir Modal Partes
-          </button>
           {isModalOpenPartesVariable && (
-            <PartesVariable
-              onClosePartesVariable={() => setIsModalOpenPartesVariable(false)}
+            <FelicidadesUno
+              onClose={() => setIsModalOpenPartesVariable(false)}
             />
           )}
         </div>
