@@ -71,8 +71,8 @@ const Page1 = () => {
       <TopBar />
       <div
         style={{
-          margin: "45px",
-          gap: "35px",
+          margin: "35px",
+          gap: "25px",
           display: "flex",
           flexDirection: "column",
         }}
