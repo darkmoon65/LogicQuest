@@ -45,6 +45,16 @@ const Page1 = () => {
             />
           )}
         </div>
+        {/* <div>
+          <button onClick={() => setIsModalOpenPartesVariable(true)}>
+            Abrir Modal Partes
+          </button>
+          {isModalOpenPartesVariable && (
+            <PartesVariable
+              onClosePartesVariable={() => setIsModalOpenPartesVariable(false)}
+            />
+          )}
+        </div> */}
       </div>
     </div>
   );

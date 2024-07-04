@@ -1,6 +1,7 @@
 import { useRef, useCallback, useState, useEffect } from "react";
 import ItemCloud from "./itemCloud";
 import "./style.css";
+import manoDeslizante from "../../../assets/mano_deslizante.gif";
 
 const initValues = {
   item1: "1",
@@ -119,6 +120,7 @@ const NubeDrag = ({ openModal, handleOk }) => {
             </span>
           ))}
         </div>
+        <img src={manoDeslizante} alt="felicidades" width={"70%"} />
       </div>
     </>
   );

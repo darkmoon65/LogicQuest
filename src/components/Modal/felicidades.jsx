@@ -1,7 +1,8 @@
 import React, { useRef, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 import felicidades_uno from "../../assets/felicidades_uno.png";
-import recuerda_entero from "../../assets/recuerda_entero.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 import confetti from "canvas-confetti";
 
@@ -54,7 +55,7 @@ const FelicidadesUno = ({ onClose }) => {
         left: 0,
         width: "100%",
         height: "100%",
-        backgroundColor: "rgba(0,0,0,0.5)",
+        backgroundColor: "rgba(0,0,0,0.9)",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -80,6 +81,49 @@ const FelicidadesUno = ({ onClose }) => {
             ¡GENIAL!
           </span>
           <img src={felicidades_uno} alt="felicidades" width={"70%"} />
+          <div
+            style={{
+              marginTop: "20px",
+              display: "flex",
+              justifyContent: "space-around",
+              width: "100%",
+            }}
+          >
+            <button
+              style={{
+                width: "35px",
+                height: "35px",
+                fontSize: "16px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "#5eafdd",
+                color: "#fff",
+                border: "none",
+                borderRadius: "50px",
+                cursor: "pointer",
+              }}
+            >
+              <FontAwesomeIcon icon={faHome} style={{ marginRight: "px" }} />
+            </button>
+            <button
+              style={{
+                width: "35px",
+                height: "35px",
+                fontSize: "16px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                backgroundColor: "#01BC00",
+                color: "#fff",
+                border: "none",
+                borderRadius: "50px",
+                cursor: "pointer",
+              }}
+            >
+              <FontAwesomeIcon icon={faArrowRight} />
+            </button>
+          </div>
         </div>
       </animated.div>
     </div>
