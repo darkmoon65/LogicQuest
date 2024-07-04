@@ -34,17 +34,30 @@ const Page1 = () => {
           openModal={() => setIsModalOpenRecuerda(true)}
           handleOk={handleOk}
         />
+        {/* <div>
+<button onClick={() => setIsModalOpen(true)}>Abrir Modal</button>
+{isModalOpen && (
+<FelicidadesUno onClose={() => setIsModalOpen(false)} />
+)}
+</div> */}
         <div>
-          <button onClick={() => setIsModalOpen(true)}>Abrir Modal</button>
+          <button onClick={() => setIsModalOpenRecuerda(true)}>
+            Abrir Recuerda
+          </button>
           {isModalOpenRecuerda && (
             <Recuerda onCloseRecuerda={() => setIsModalOpenRecuerda(false)} />
           )}
-          {isModalOpenPartesVariable && (
-            <FelicidadesUno
-              onClose={() => setIsModalOpenPartesVariable(false)}
-            />
-          )}
         </div>
+        {/* <div>
+<button onClick={() => setIsModalOpenPartesVariable(true)}>
+Abrir Modal Partes
+</button>
+{isModalOpenPartesVariable && (
+<PartesVariable
+onClosePartesVariable={() => setIsModalOpenPartesVariable(false)}
+/>
+)}
+</div> */}
       </div>
     </div>
   );
