@@ -5,12 +5,14 @@ import Recuerda from "../../Modal/recuerda";
 import TopBar from "../TopBar";
 import NubeDrag from "./nubeDrag";
 import "./style.css";
+import { useNavigate } from "react-router-dom";
 
 const Page1 = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalOpenRecuerda, setIsModalOpenRecuerda] = useState(false);
   const [isModalOpenPartesVariable, setIsModalOpenPartesVariable] =
     useState(false);
+  const navigate = useNavigate();
 
   const handleOk = () => {
     setIsModalOpenPartesVariable(true);
@@ -35,26 +37,16 @@ const Page1 = () => {
           handleOk={handleOk}
         />
         <div>
-          <button onClick={() => setIsModalOpen(true)}>Abrir Modal</button>
           {isModalOpenRecuerda && (
             <Recuerda onCloseRecuerda={() => setIsModalOpenRecuerda(false)} />
           )}
           {isModalOpenPartesVariable && (
             <FelicidadesUno
               onClose={() => setIsModalOpenPartesVariable(false)}
+              onContinue={() => navigate("/aprendizaje/3")}
             />
           )}
         </div>
-        {/* <div>
-          <button onClick={() => setIsModalOpenPartesVariable(true)}>
-            Abrir Modal Partes
-          </button>
-          {isModalOpenPartesVariable && (
-            <PartesVariable
-              onClosePartesVariable={() => setIsModalOpenPartesVariable(false)}
-            />
-          )}
-        </div> */}
       </div>
     </div>
   );

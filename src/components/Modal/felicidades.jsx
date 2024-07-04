@@ -5,9 +5,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 import confetti from "canvas-confetti";
+import { useNavigate } from "react-router-dom";
 
-const FelicidadesUno = ({ onClose }) => {
+const FelicidadesUno = ({ onClose, onContinue }) => {
   const modalRef = useRef();
+  const navigate = useNavigate();
 
   const closeModal = (e) => {
     if (modalRef.current && !modalRef.current.contains(e.target)) {
@@ -90,6 +92,7 @@ const FelicidadesUno = ({ onClose }) => {
             }}
           >
             <button
+              onClick={() => navigate("/")}
               style={{
                 width: "35px",
                 height: "35px",
@@ -107,6 +110,7 @@ const FelicidadesUno = ({ onClose }) => {
               <FontAwesomeIcon icon={faHome} style={{ marginRight: "px" }} />
             </button>
             <button
+              onClick={onContinue}
               style={{
                 width: "35px",
                 height: "35px",

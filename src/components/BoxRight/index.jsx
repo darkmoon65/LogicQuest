@@ -1,7 +1,7 @@
 import React from "react";
-import buho from "../../../assets/buho.png";
+import emoji from "../../assets/emoji.png";
 
-const BoxLeft = ({ messageLeft }) => {
+const BoxRight = ({ messageRight }) => {
   return (
     <div
       style={{
@@ -10,23 +10,17 @@ const BoxLeft = ({ messageLeft }) => {
         justifyContent: "flex-end",
       }}
     >
-      <img
-        src={buho}
-        alt="buho"
-        height={"130px"}
-        style={{ transform: "scaleX(-1)" }}
-      />
       <div
         style={{
           position: "relative",
-          backgroundColor: "#FBEFFF",
+          backgroundColor: "#CFAFDE",
           color: "#000",
           width: "60%",
           height: "50%",
           borderRadius: "8px",
           padding: "15px",
           lineHeight: "20px",
-          marginLeft: "20px",
+          marginRight: "20px",
         }}
       >
         <div style={{ position: "relative" }}>
@@ -35,20 +29,21 @@ const BoxLeft = ({ messageLeft }) => {
               content: '""',
               position: "absolute",
               top: "10px",
-              left: "-25px",
+              right: "-25px",
               width: "0",
               height: "0",
               border: "15px solid transparent",
-              borderRightColor: "#FBEFFF",
-              borderLeft: "0",
+              borderLeftColor: "#CFAFDE",
+              borderRight: "0",
               borderTop: "0",
             }}
           />
-          {messageLeft}
+          {messageRight}
         </div>
       </div>
+      <img src={emoji} alt="emoji" height={"70px"} />
     </div>
   );
 };
 
-export default BoxLeft;
+export default BoxRight;

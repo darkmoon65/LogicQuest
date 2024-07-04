@@ -1,0 +1,43 @@
+.cloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  max-width: 400px;
+  min-height: 250px;
+  background-size: 300px 250px;
+  background-image: url("../../../assets/nube.png");
+  background-repeat: no-repeat;
+}
+.draggable {
+  margin: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #5eafdd;
+  cursor: grab;
+}
+
+.storage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  padding: 10px;
+  width: 80%;
+  max-width: 600px;
+}
+
+.storage-content {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 50px;
+  min-width: 50px;
+  border: 2px dashed #aaa;
+  padding: 10px;
+  margin-top: 10px;
+}

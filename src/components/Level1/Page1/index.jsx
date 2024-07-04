@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 import TopBar from "../TopBar";
-import BoxLeft from "./boxLeft.jsx";
-import BoxRight from "./boxRight.jsx";
+import BoxLeft from "../../BoxLeft/index.jsx";
+import BoxRight from "../../BoxRight/index.jsx";
 import { useNavigate } from "react-router-dom";
 
 const Page1 = () => {
