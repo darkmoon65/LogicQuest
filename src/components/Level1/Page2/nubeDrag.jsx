@@ -1,7 +1,7 @@
 import { useRef, useCallback, useState, useEffect } from "react";
 import ItemCloud from "./itemCloud";
 import "./style.css";
-import manoDeslizante from "../../../assets/mano_deslizante.gif";
+import manoDeslizante from "../../../assets/mano_deslizante2.gif";
 
 const initValues = {
   item1: "1",
@@ -13,10 +13,12 @@ const initValues = {
   item7: "7,1",
   item8: "0",
 };
+
 const NubeDrag = ({ openModal, handleOk }) => {
   const [itemsOptions, setItemsOptions] = useState(initValues);
   const [itemsSelected, setItemsSelected] = useState([]);
   const [isActive, setIsActive] = useState(true);
+  const [showHand, setShowHand] = useState(true);
   const refDivStore = useRef(null);
 
   const refresh = () => {
@@ -25,6 +27,7 @@ const NubeDrag = ({ openModal, handleOk }) => {
       setIsActive(true);
     }, 100);
   };
+
   const handleTouchEnd = useCallback((event) => {
     console.log(event);
     const rectInput = refDivStore.current.getBoundingClientRect();
@@ -62,6 +65,14 @@ const NubeDrag = ({ openModal, handleOk }) => {
       handleOk();
     }
   }, [itemsSelected]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowHand(false);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       {isActive && (
@@ -108,6 +119,13 @@ const NubeDrag = ({ openModal, handleOk }) => {
               handleTouchEnd={handleTouchEnd}
             />
           </div>
+          {showHand && (
+            <img
+              src={manoDeslizante}
+              alt="mano_en_movimiento"
+              className="hand-overlay"
+            />
+          )}
         </div>
       )}
 
@@ -120,7 +138,6 @@ const NubeDrag = ({ openModal, handleOk }) => {
             </span>
           ))}
         </div>
-        <img src={manoDeslizante} alt="felicidades" width={"70%"} />
       </div>
     </>
   );
