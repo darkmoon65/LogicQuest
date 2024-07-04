@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import FelicidadesUno from "../../Modal/felicidades";
 import ModalPartes from "../../Modal/modalPartes";
+import PartesVar from "../../Modal/modalVariable";
 import TopBar from "../TopBar";
 import NubeDrag from "./nubeDrag";
 import "./style.css";
 
 const Page4 = () => {
   const [isModalOpenRecuerda, setIsModalOpenRecuerda] = useState(false);
+  const [isModalOpenPartVar, setIsModalOpenPartVar] = useState(false);
+
   const [isModalOpenPartesVariable, setIsModalOpenPartesVariable] =
     useState(false);
 
@@ -36,6 +39,11 @@ const Page4 = () => {
           {isModalOpenRecuerda && (
             <ModalPartes
               onClosePartesVariable={() => setIsModalOpenRecuerda(false)}
+            />
+          )}
+          {isModalOpenPartVar && (
+            <PartesVar
+              onClosePartesVariable={() => setIsModalOpenPartVar(false)}
             />
           )}
           {isModalOpenPartesVariable && (

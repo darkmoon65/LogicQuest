@@ -44,8 +44,16 @@
 
 .hand-overlay {
   position: absolute;
-  top: 325px;
+  top: 350px;
   left: 180px;
   width: 40%;
+  z-index: 1000;
+}
+
+.hand-overlay-menu {
+  position: absolute;
+  top: 150px;
+  left: 120px;
+  width: 20%;
   z-index: 1000;
 }
