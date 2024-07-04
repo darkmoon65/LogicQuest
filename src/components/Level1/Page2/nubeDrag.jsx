@@ -1,4 +1,4 @@
-import { useRef, useCallback, useState } from "react";
+import { useRef, useCallback, useState, useEffect } from "react";
 import ItemCloud from "./itemCloud";
 import "./style.css";
 
@@ -12,7 +12,7 @@ const initValues = {
   item7: "7,1",
   item8: "0",
 };
-const NubeDrag = ({ openModal }) => {
+const NubeDrag = ({ openModal, handleOk }) => {
   const [itemsOptions, setItemsOptions] = useState(initValues);
   const [itemsSelected, setItemsSelected] = useState([]);
   const [isActive, setIsActive] = useState(true);
@@ -50,9 +50,17 @@ const NubeDrag = ({ openModal }) => {
         );
         return nuevoItemsOptions;
       });
-      setItemsSelected([...itemsSelected, content]);
+      setItemsSelected((prev) => {
+        return [...prev, content];
+      });
     }
   }, []);
+
+  useEffect(() => {
+    if (itemsSelected.length === 4) {
+      handleOk();
+    }
+  }, [itemsSelected]);
   return (
     <>
       {isActive && (
@@ -105,9 +113,11 @@ const NubeDrag = ({ openModal }) => {
       <div id="storage" className="storage">
         <h2>Enteros</h2>
         <div id="storage-content" className="storage-content" ref={refDivStore}>
-          {itemsSelected.map((e) => {
-            <span>{e}</span>;
-          })}
+          {itemsSelected.map((e) => (
+            <span key={e} className="draggable">
+              {e}
+            </span>
+          ))}
         </div>
       </div>
     </>

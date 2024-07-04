@@ -18,6 +18,9 @@ const ItemCloud = ({ text, handleTouchEnd }) => {
   };
 
   useEffect(() => {
+    if (!text) {
+      return;
+    }
     const itemSpan = refItem.current;
     itemSpan.addEventListener("touchstart", handleTouchStart);
     itemSpan.addEventListener("touchmove", handleTouchMove);

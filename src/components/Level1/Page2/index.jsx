@@ -12,6 +12,9 @@ const Page1 = () => {
   const [isModalOpenPartesVariable, setIsModalOpenPartesVariable] =
     useState(false);
 
+  const handleOk = () => {
+    setIsModalOpenPartesVariable(true);
+  };
   return (
     <div style={{ color: "white", padding: "20px" }}>
       <TopBar />
@@ -27,7 +30,10 @@ const Page1 = () => {
         <span style={{ fontSize: "30px", textAlign: "center" }}>
           Selecciona y arrastra los valores enteros
         </span>
-        <NubeDrag openModal={() => setIsModalOpenRecuerda(true)} />
+        <NubeDrag
+          openModal={() => setIsModalOpenRecuerda(true)}
+          handleOk={handleOk}
+        />
         <div>
           <button onClick={() => setIsModalOpen(true)}>Abrir Modal</button>
           {isModalOpenRecuerda && (
