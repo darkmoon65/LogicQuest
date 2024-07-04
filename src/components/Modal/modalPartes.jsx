@@ -1,16 +1,13 @@
 import React, { useRef, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
-import felicidades_uno from "../../assets/felicidades_uno.png";
-import recuerda_entero from "../../assets/recuerda_entero.png";
+import partes_variable from "../../assets/partes_variable.png";
 
-import confetti from "canvas-confetti";
-
-const FelicidadesUno = ({ onClose }) => {
+const PartesVariable = ({ onClosePartesVariable }) => {
   const modalRef = useRef();
 
   const closeModal = (e) => {
     if (modalRef.current && !modalRef.current.contains(e.target)) {
-      onClose();
+      onClosePartesVariable();
     }
   };
 
@@ -22,20 +19,12 @@ const FelicidadesUno = ({ onClose }) => {
   }, []);
 
   useEffect(() => {
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 },
-    });
-  }, []);
-
-  useEffect(() => {
     const timer = setTimeout(() => {
-      onClose();
+      onClosePartesVariable();
     }, 5000);
 
     return () => clearTimeout(timer);
-  }, [onClose]);
+  }, [onClosePartesVariable]);
 
   const animation = useSpring({
     config: {
@@ -54,7 +43,7 @@ const FelicidadesUno = ({ onClose }) => {
         left: 0,
         width: "100%",
         height: "100%",
-        backgroundColor: "rgba(0,0,0,0.5)",
+        backgroundColor: "rgba(0,0,0,0.9)",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -77,13 +66,13 @@ const FelicidadesUno = ({ onClose }) => {
               margin: "10px",
             }}
           >
-            ¡GENIAL!
+            RECUERDA:
           </span>
-          <img src={felicidades_uno} alt="felicidades" width={"70%"} />
+          <img src={partes_variable} alt="partes_variable" width={"90%"} />
         </div>
       </animated.div>
     </div>
   );
 };
 
-export default FelicidadesUno;
+export default PartesVariable;
