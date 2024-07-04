@@ -29,7 +29,7 @@ const Page1 = () => {
           alignItems: "center",
         }}
       >
-        <span style={{ fontSize: "30px", textAlign: "center" }}>
+        <span style={{ fontSize: "25px", textAlign: "center" }}>
           Selecciona y arrastra los valores enteros
         </span>
         <NubeDrag

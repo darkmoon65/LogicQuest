@@ -27,6 +27,7 @@ const BoxLeft = ({ messageLeft }) => {
           padding: "15px",
           lineHeight: "20px",
           marginLeft: "20px",
+          fontSize: "13px",
         }}
       >
         <div style={{ position: "relative" }}>

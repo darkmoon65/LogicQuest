@@ -11,17 +11,18 @@
   background-size: 330px 250px;
   background-image: url("../../../assets/nube.png");
   background-repeat: no-repeat;
-}
-.draggable {
+  }
+  .draggable {
   margin: 5px;
   padding: 6px;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #5eafdd;
   cursor: grab;
-}
-
-.storage {
+  font-size: 10px;
+  }
+  
+  .storage {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,9 +31,9 @@
   padding: 10px;
   width: 80%;
   max-width: 600px;
-}
-
-.storage-content {
+  }
+  
+  .storage-content {
   display: flex;
   flex-wrap: wrap;
   min-height: 50px;
@@ -40,11 +41,22 @@
   border: 2px dashed #aaa;
   padding: 10px;
   margin-top: 10px;
-}
-
-.container_inputs {
+  }
+  
+  .container_inputs {
   display: flex;
   gap: 10px;
   justify-content: center;
   align-items: center;
-}
+  }
+  
+  .inputs_reto{
+  
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 17px;
+  }
