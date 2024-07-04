@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
+import FelicidadesUno from "../../Modal/felicidades";
 import TopBar from "../TopBar";
 import NubeDrag from "./nubeDrag";
 import "./style.css";
 
 const Page1 = () => {
   const refDivStore = useRef(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div style={{ color: "white", padding: "20px" }}>
@@ -29,6 +31,12 @@ const Page1 = () => {
             className="storage-content"
             ref={refDivStore}
           ></div>
+        </div>
+        <div>
+          <button onClick={() => setIsModalOpen(true)}>Abrir Modal</button>
+          {isModalOpen && (
+            <FelicidadesUno onClose={() => setIsModalOpen(false)} />
+          )}
         </div>
       </div>
     </div>
