@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef } from "react";
 
-const ItemCloud = ({ text, divStore }) => {
+const ItemCloud = ({ text, handleTouchEnd }) => {
   const refItem = useRef(null);
 
   const handleTouchStart = (event) => {
@@ -17,39 +17,29 @@ const ItemCloud = ({ text, divStore }) => {
     refItem.current.style.top = touch.clientY + "px";
   };
 
-  const handleTouchEnd = useCallback(() => {
-    const rectInput = divStore.getBoundingClientRect();
-    const rectDraggable = refItem.current.getBoundingClientRect();
-
-    if (
-      rectDraggable.left >= rectInput.left &&
-      rectDraggable.right <= rectInput.right &&
-      rectDraggable.top >= rectInput.top &&
-      rectDraggable.bottom <= rectInput.bottom
-    ) {
-      console.lof("asdsadsa");
-      //   input1.value = divEntero.innerText;
-      //   divEntero.style.display = "none";
-      //   input1.style.border = "none";
-      //   input1.disabled = true;
-      //   input1.style.backgroundColor = "white";
-      //   phase2();
-    }
-  }, [divStore]);
   useEffect(() => {
-    console.log(divStore);
+    if (!text) {
+      return;
+    }
     const itemSpan = refItem.current;
     itemSpan.addEventListener("touchstart", handleTouchStart);
     itemSpan.addEventListener("touchmove", handleTouchMove);
     itemSpan.addEventListener("touchend", handleTouchEnd);
     return () => {
-      refItem.current.removeEventListener("touchstart", handleTouchStart);
+      itemSpan.removeEventListener("touchstart", handleTouchStart);
+      itemSpan.removeEventListener("touchmove", handleTouchMove);
+      itemSpan.removeEventListener("touchend", handleTouchEnd);
     };
-  }, [divStore]);
+  }, []);
+
   return (
-    <span className="draggable" draggable="true" ref={refItem}>
-      {text}
-    </span>
+    <>
+      {text && (
+        <span className="draggable" draggable="true" ref={refItem}>
+          {text}
+        </span>
+      )}
+    </>
   );
 };
 
