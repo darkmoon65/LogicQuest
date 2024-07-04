@@ -21,6 +21,7 @@ const BoxRight = ({ messageRight }) => {
           padding: "15px",
           lineHeight: "20px",
           marginRight: "20px",
+          fontSize: "13px",
         }}
       >
         <div style={{ position: "relative" }}>
