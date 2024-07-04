@@ -3,14 +3,11 @@ import ItemCloud from "./itemCloud";
 import "./style.css";
 
 const initValues = {
-  item1: "1",
-  item2: "2,5",
-  item3: "a",
-  item4: "-3",
-  item5: "4050",
-  item6: "B",
-  item7: "7,1",
-  item8: "0",
+  item1: "Cabeza",
+  item2: "Tipo",
+  item3: "Valor variable",
+  item4: "Decimal",
+  item5: "Nombre variable",
 };
 const NubeDrag = ({ openModal, handleOk }) => {
   const [itemsOptions, setItemsOptions] = useState(initValues);
@@ -94,31 +91,31 @@ const NubeDrag = ({ openModal, handleOk }) => {
               text={itemsOptions.item5}
               handleTouchEnd={handleTouchEnd}
             />
-            <ItemCloud
-              text={itemsOptions.item6}
-              handleTouchEnd={handleTouchEnd}
-            />
-            <ItemCloud
-              text={itemsOptions.item7}
-              handleTouchEnd={handleTouchEnd}
-            />
-            <ItemCloud
-              text={itemsOptions.item8}
-              handleTouchEnd={handleTouchEnd}
-            />
           </div>
         </div>
       )}
 
-      <div id="storage" className="storage">
-        <h2>Enteros</h2>
-        <div id="storage-content" className="storage-content" ref={refDivStore}>
-          {itemsSelected.map((e) => (
-            <span key={e} className="draggable">
-              {e}
-            </span>
-          ))}
-        </div>
+      <div class="container_inputs">
+        <input
+          className="inputs_reto"
+          id="first_input"
+          style={{ width: "90px", height: "25px", borderRadius: "20px" }}
+          type="text"
+        />
+        <input
+          className="inputs_reto"
+          id="second_input"
+          style={{ width: "110px", height: "25px", borderRadius: "20px" }}
+          type="text"
+          disabled
+        />
+        <input
+          className="inputs_reto"
+          id="third_input"
+          style={{ width: "90px", height: "25px", borderRadius: "20px" }}
+          type="text"
+          disabled
+        />
       </div>
     </>
   );

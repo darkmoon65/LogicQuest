@@ -4,6 +4,7 @@ const ItemCloud = ({ text, handleTouchEnd }) => {
   const refItem = useRef(null);
 
   const handleTouchStart = (event) => {
+    event.preventDefault();
     const touch = event.touches[0];
 
     refItem.current.style.position = "absolute";
@@ -12,6 +13,7 @@ const ItemCloud = ({ text, handleTouchEnd }) => {
     refItem.current.style.top = touch.clientY + "px";
   };
   const handleTouchMove = (event) => {
+    event.preventDefault();
     const touch = event.touches[0];
     refItem.current.style.left = touch.clientX + "px";
     refItem.current.style.top = touch.clientY + "px";

@@ -26,7 +26,7 @@ const Page4 = () => {
         }}
       >
         <span style={{ fontSize: "30px", textAlign: "center" }}>
-          Selecciona y arrastra los valores enteros
+          Partes de una variable
         </span>
         <NubeDrag
           openModal={() => setIsModalOpenRecuerda(true)}
