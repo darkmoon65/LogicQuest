@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import FelicidadesUno from "../../Modal/felicidades";
 import PartesVariable from "../../Modal/modalPartes";
 import Recuerda from "../../Modal/recuerda";
@@ -7,7 +7,6 @@ import NubeDrag from "./nubeDrag";
 import "./style.css";
 
 const Page1 = () => {
-  const refDivStore = useRef(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalOpenRecuerda, setIsModalOpenRecuerda] = useState(false);
   const [isModalOpenPartesVariable, setIsModalOpenPartesVariable] =
@@ -28,21 +27,13 @@ const Page1 = () => {
         <span style={{ fontSize: "30px", textAlign: "center" }}>
           Selecciona y arrastra los valores enteros
         </span>
-        <NubeDrag divStore={refDivStore.current} />
-        <div id="storage" className="storage">
-          <h2>Enteros</h2>
-          <div
-            id="storage-content"
-            className="storage-content"
-            ref={refDivStore}
-          ></div>
-        </div>
-        {/* <div>
+        <NubeDrag openModal={() => setIsModalOpen(true)} />
+        <div>
           <button onClick={() => setIsModalOpen(true)}>Abrir Modal</button>
           {isModalOpen && (
             <FelicidadesUno onClose={() => setIsModalOpen(false)} />
           )}
-        </div> */}
+        </div>{" "}
         {/* <div>
           <button onClick={() => setIsModalOpenRecuerda(true)}>
             Abrir Recuerda
