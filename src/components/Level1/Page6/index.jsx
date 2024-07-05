@@ -1,12 +1,12 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import FelicidadesUno from "../../Modal/felicidades";
 import ModalPartes from "../../Modal/modalPartes";
-import TopBar from "../TopBar";
-import NubeDrag from "./nubeDrag";
+import TopBar from "../../TopBar";
 import "./style.css";
 import CofreGift from "../../../assets/cofre.gif";
 import CofreVacio from "../../../assets/cofre_solo.png";
 import { useNavigate } from "react-router-dom";
+import { useNumber } from "../../../contexts/index";
 
 const Page4 = () => {
   const [isModalOpenRecuerda, setIsModalOpenRecuerda] = useState(false);
@@ -21,6 +21,7 @@ const Page4 = () => {
 
   const [fase, setFase] = useState(1);
   const navigate = useNavigate();
+  const { number, updateNumber } = useNumber();
 
   const handleOk = () => {
     setIsModalOpenPartesVariable(true);
@@ -44,10 +45,11 @@ const Page4 = () => {
   };
   const handleBlurValor = () => {
     setIsModalOpenPartesVariable(true);
+    updateNumber(number + 1);
   };
   return (
     <div style={{ color: "white", padding: "20px" }}>
-      <TopBar />
+      <TopBar advance={"90%"} />
       <div
         style={{
           margin: "20px",
@@ -107,7 +109,7 @@ const Page4 = () => {
           {isModalOpenPartesVariable && (
             <FelicidadesUno
               onClose={() => setIsModalOpenPartesVariable(false)}
-              onContinue={() => navigate("/game")}
+              onContinue={() => navigate("/")}
             />
           )}
         </div>

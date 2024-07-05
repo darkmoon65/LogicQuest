@@ -10,23 +10,28 @@ import Page4 from "./components/Level1/Page4";
 import Page5 from "./components/Level1/Page5";
 import Page6 from "./components/Level1/Page6";
 import Game from "./components/Level2/game";
+import GameProto from "./components/Level2/gameProto";
+import { NumberProvider } from "./contexts";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<Menu />} />
-          <Route path="/aprendizaje/1" element={<Page1 />} />
-          <Route path="/aprendizaje/2" element={<Page2 />} />
-          <Route path="/aprendizaje/3" element={<Page3 />} />
-          <Route path="/aprendizaje/4" element={<Page4 />} />
-          <Route path="/aprendizaje/5" element={<Page5 />} />
-          <Route path="/aprendizaje/6" element={<Page6 />} />
-          <Route path="/game" element={<Game />} />
-        </Routes>
-      </Layout>
-    </BrowserRouter>
+    <NumberProvider>
+      <BrowserRouter>
+        <Layout>
+          <Routes>
+            <Route path="/" element={<Menu />} />
+            <Route path="/aprendizaje/1" element={<Page1 />} />
+            <Route path="/aprendizaje/2" element={<Page2 />} />
+            <Route path="/aprendizaje/3" element={<Page3 />} />
+            <Route path="/aprendizaje/4" element={<Page4 />} />
+            <Route path="/aprendizaje/5" element={<Page5 />} />
+            <Route path="/aprendizaje/6" element={<Page6 />} />
+            <Route path="/game" element={<Game />} />
+            <Route path="/game2" element={<GameProto />} />
+          </Routes>
+        </Layout>
+      </BrowserRouter>
+    </NumberProvider>
   );
 };
 

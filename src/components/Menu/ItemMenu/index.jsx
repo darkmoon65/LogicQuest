@@ -1,14 +1,14 @@
 import "./style.css";
 import { useNavigate } from "react-router-dom";
 
-const ItemMenu = ({ img, isDisabled }) => {
+const ItemMenu = ({ img, isDisabled, goto = "/aprendizaje/1" }) => {
   let navigate = useNavigate();
 
   const handleCLick = () => {
     if (isDisabled) {
       return;
     }
-    navigate("/aprendizaje/1");
+    navigate(goto);
   };
   return (
     <div

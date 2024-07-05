@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
-import TopBar from "../TopBar/index.jsx";
+import TopBar from "../../TopBar/index.jsx";
 import BoxLeft from "../../BoxLeft/index.jsx";
 import BoxRight from "../../BoxRight/index.jsx";
 import { useNavigate } from "react-router-dom";
@@ -68,7 +68,7 @@ const Page3 = () => {
 
   return (
     <div style={{ color: "white", padding: "20px" }}>
-      <TopBar />
+      <TopBar advance={"80%"} />
       <div
         style={{
           margin: "45px",

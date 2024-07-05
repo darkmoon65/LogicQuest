@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import FelicidadesUno from "../../Modal/felicidades";
 import ModalPartes from "../../Modal/modalPartes";
 import PartesVar from "../../Modal/modalVariable";
-import TopBar from "../TopBar";
+import TopBar from "../../TopBar";
 import NubeDrag from "./nubeDrag";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
@@ -28,7 +28,7 @@ const Page4 = () => {
   }, []);
   return (
     <div style={{ color: "white", padding: "20px" }}>
-      <TopBar />
+      <TopBar advance={"60%"} />
       <div
         style={{
           margin: "20px",

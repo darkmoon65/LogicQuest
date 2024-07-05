@@ -1,10 +1,10 @@
-import ImgHouse from "../../../assets/icon_home.png";
-import bronce_medalla from "../../../assets/bronce_medalla.png";
-import plata_medalla from "../../../assets/plata_medalla.png";
-import gold_medalla from "../../../assets/golde_medalla.png";
+import ImgHouse from "../../assets/icon_home.png";
+import bronce_medalla from "../../assets/bronce_medalla.png";
+import plata_medalla from "../../assets/plata_medalla.png";
+import gold_medalla from "../../assets/golde_medalla.png";
 
 import { useNavigate } from "react-router-dom";
-const TopBar = () => {
+const TopBar = ({ advance }) => {
   let navigate = useNavigate();
   return (
     <div style={{ display: "flex", alignItems: "center" }}>
@@ -41,7 +41,7 @@ const TopBar = () => {
               height: "15px",
               borderRadius: "100px",
               backgroundColor: "green",
-              width: "40%",
+              width: `${advance}`,
               position: "absolute",
               zIndex: "100",
               top: "0",
@@ -50,7 +50,7 @@ const TopBar = () => {
             }}
           >
             {" "}
-            30%
+            {advance}
           </span>
         </div>
 
