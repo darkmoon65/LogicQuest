@@ -77,9 +77,9 @@ const Page3 = () => {
           flexDirection: "column",
         }}
       >
-        <BoxRight messageRight="¿Ya sé cuales son las partes de una variable?" />
+        <BoxRight messageRight="¿Cómo declaro una variable correctamente?" />
         <animated.div style={messageProps1}>
-          <BoxLeft messageLeft="Ahora puedes crear variables de tipo entero" />
+          <BoxLeft messageLeft="Una variable consta de tres partes TIPO, NOMBRE, VALOR " />
         </animated.div>
         <animated.button
           style={buttonProps}

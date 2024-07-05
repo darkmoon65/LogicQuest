@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import FelicidadesUno from "../../Modal/felicidades";
 import ModalPartes from "../../Modal/modalPartes";
 import PartesVar from "../../Modal/modalVariable";
 import TopBar from "../TopBar";
 import NubeDrag from "./nubeDrag";
 import "./style.css";
+import { useNavigate } from "react-router-dom";
 
 const Page4 = () => {
   const [isModalOpenRecuerda, setIsModalOpenRecuerda] = useState(false);
@@ -12,10 +13,19 @@ const Page4 = () => {
 
   const [isModalOpenPartesVariable, setIsModalOpenPartesVariable] =
     useState(false);
+  const navigate = useNavigate();
 
   const handleOk = () => {
-    setIsModalOpenPartesVariable(true);
+    setIsModalOpenPartVar(true);
+    setTimeout(() => {
+      setIsModalOpenPartVar(false);
+      setIsModalOpenPartesVariable(true);
+    }, 2500);
   };
+
+  useEffect(() => {
+    setIsModalOpenRecuerda(true);
+  }, []);
   return (
     <div style={{ color: "white", padding: "20px" }}>
       <TopBar />
@@ -49,6 +59,7 @@ const Page4 = () => {
           {isModalOpenPartesVariable && (
             <FelicidadesUno
               onClose={() => setIsModalOpenPartesVariable(false)}
+              onContinue={() => navigate("/aprendizaje/5")}
             />
           )}
         </div>

@@ -84,7 +84,7 @@ const Page3 = () => {
         <animated.button
           style={buttonProps}
           className="start-button"
-          onClick={() => navigate("/aprendizaje/4")}
+          onClick={() => navigate("/aprendizaje/6")}
         >
           INICIAR
         </animated.button>
