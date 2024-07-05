@@ -6,6 +6,7 @@ import NubeDrag from "./nubeDrag";
 import "./style.css";
 import CofreGift from "../../../assets/cofre.gif";
 import CofreVacio from "../../../assets/cofre_solo.png";
+import { useNavigate } from "react-router-dom";
 
 const Page4 = () => {
   const [isModalOpenRecuerda, setIsModalOpenRecuerda] = useState(false);
@@ -19,6 +20,7 @@ const Page4 = () => {
   const [showCofreVacio, setShowCofreVacio] = useState(false);
 
   const [fase, setFase] = useState(1);
+  const navigate = useNavigate();
 
   const handleOk = () => {
     setIsModalOpenPartesVariable(true);
@@ -105,6 +107,7 @@ const Page4 = () => {
           {isModalOpenPartesVariable && (
             <FelicidadesUno
               onClose={() => setIsModalOpenPartesVariable(false)}
+              onContinue={() => navigate("/game")}
             />
           )}
         </div>

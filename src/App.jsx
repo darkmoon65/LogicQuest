@@ -9,6 +9,7 @@ import Page3 from "./components/Level1/Page3";
 import Page4 from "./components/Level1/Page4";
 import Page5 from "./components/Level1/Page5";
 import Page6 from "./components/Level1/Page6";
+import Game from "./components/Level2/game";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/aprendizaje/4" element={<Page4 />} />
           <Route path="/aprendizaje/5" element={<Page5 />} />
           <Route path="/aprendizaje/6" element={<Page6 />} />
+          <Route path="/game" element={<Game />} />
         </Routes>
       </Layout>
     </BrowserRouter>
