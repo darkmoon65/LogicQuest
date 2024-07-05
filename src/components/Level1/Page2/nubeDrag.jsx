@@ -2,6 +2,8 @@ import { useRef, useCallback, useState, useEffect } from "react";
 import ItemCloud from "./itemCloud";
 import "./style.css";
 import manoDeslizante from "../../../assets/mano_deslizante2.gif";
+import soundBueno from "../../../assets/complete_game.wav";
+import soundMalo from "../../../assets/game_over.wav";
 
 const initValues = {
   item1: "1",
@@ -20,6 +22,8 @@ const NubeDrag = ({ openModal, handleOk }) => {
   const [isActive, setIsActive] = useState(true);
   const [showHand, setShowHand] = useState(true);
   const refDivStore = useRef(null);
+  const audioBueno = new Audio(soundBueno);
+  const audioMalo = new Audio(soundMalo);
 
   const refresh = () => {
     setIsActive(false);
@@ -42,6 +46,7 @@ const NubeDrag = ({ openModal, handleOk }) => {
       let content = event.target.innerText;
       const regexInteger = /^-?\d+$/;
       if (!regexInteger.test(content)) {
+        audioMalo.play();
         refresh();
         openModal();
         return;
@@ -57,6 +62,8 @@ const NubeDrag = ({ openModal, handleOk }) => {
       setItemsSelected((prev) => {
         return [...prev, content];
       });
+
+      audioBueno.play();
     }
   }, []);
 

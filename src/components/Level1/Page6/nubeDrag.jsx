@@ -1,6 +1,8 @@
 import { useRef, useCallback, useState, useEffect } from "react";
 import ItemCloud from "./itemCloud";
 import "./style.css";
+import soundBueno from "../../../assets/complete_game.wav";
+import soundMalo from "../../../assets/game_over.wav";
 
 const initValues = {
   item1: "Cabeza",
@@ -21,6 +23,9 @@ const NubeDrag = ({ openModal, handleOk }) => {
   const nombreRef = useRef(null);
   const valorRef = useRef(null);
   const [showItems, setShowItems] = useState(true);
+
+  const audioBueno = new Audio(soundBueno);
+  const audioMalo = new Audio(soundMalo);
 
   const refresh = () => {
     console.log("refresh");
@@ -56,6 +61,7 @@ const NubeDrag = ({ openModal, handleOk }) => {
         if (content !== target) {
           refresh();
           openModal();
+          audioMalo.play();
           return;
         }
         setItemsOptions((prevItemsOptions) => {
@@ -78,6 +84,7 @@ const NubeDrag = ({ openModal, handleOk }) => {
         setFase((prev) => {
           return prev + 1;
         });
+        audioBueno.play();
       }
     },
     [fase, setFase]

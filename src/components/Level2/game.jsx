@@ -147,6 +147,12 @@ const Game = () => {
           <div className="game-board">{renderBoard()}</div>
         </div>
 
+        <div style={{ display: "flex", marginBottom: "-25px" }}>
+          <span style={{ marginRight: "20px" }}>Tipo</span>
+          <span style={{ marginRight: "60px" }}>Nombre</span>
+          <span style={{ marginRight: "10px" }}>Valor</span>
+        </div>
+
         <div className="container_inputs">
           <input
             className="inputs_reto"

@@ -9,8 +9,8 @@
   max-width: 400px;
   min-height: 250px;
   background-size: 330px 250px;
-  background-image: url("../../../assets/nube.png");
-  background-repeat: no-repeat;
+  /* background-image: url("../../../assets/nube.png");
+  background-repeat: no-repeat; */
   }
   .draggable {
   margin: 5px;
