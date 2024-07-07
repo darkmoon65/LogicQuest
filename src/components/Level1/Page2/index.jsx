@@ -30,7 +30,7 @@ const Page1 = () => {
         }}
       >
         <span style={{ fontSize: "25px", textAlign: "center" }}>
-          Selecciona y arrastra los valores enteros
+          Selecciona y arrastra los números enteros
         </span>
         <NubeDrag
           openModal={() => setIsModalOpenRecuerda(true)}

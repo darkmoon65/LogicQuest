@@ -12,6 +12,7 @@ import Page6 from "./components/Level1/Page6";
 import Game from "./components/Level2/game";
 import GameProto from "./components/Level2/gameProto";
 import { NumberProvider } from "./contexts";
+import Logo from "./components/Logo";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
             <Route path="/aprendizaje/6" element={<Page6 />} />
             <Route path="/game" element={<Game />} />
             <Route path="/game2" element={<GameProto />} />
+            <Route path="/logo" element={<Logo />} />
           </Routes>
         </Layout>
       </BrowserRouter>

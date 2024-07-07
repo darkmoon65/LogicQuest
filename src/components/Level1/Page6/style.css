@@ -9,8 +9,12 @@
   max-width: 400px;
   min-height: 250px;
   background-size: 330px 250px;
-  background-image: url("../../../assets/nube.png");
-  background-repeat: no-repeat;
+  border: 1px solid white;
+  border-radius: 45px;
+  background-color: rgba(0, 0, 0, 0.3);
+  /* background-image: url("../../../assets/nube.png");
+  background-repeat: no-repeat;  */
+
 }
 .draggable {
   margin: 5px;
@@ -42,10 +46,9 @@
   margin-top: 10px;
 }
 
-.container_inputs {
+.container_inputs2 {
   display: flex;
   gap: 10px;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
 }

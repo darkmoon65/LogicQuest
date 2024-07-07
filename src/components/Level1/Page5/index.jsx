@@ -32,13 +32,13 @@ const Page3 = () => {
   });
 
   const buttonProps = useSpring({
-    background: `linear-gradient(to bottom, #FBDD86, #BB6500)`,
+    background: `linear-gradient(to bottom, green, green)`,
     borderRadius: "8px",
     border: "none",
     cursor: "pointer",
     boxShadow: "0px 0px 20px rgba(99, 0, 134, 0.8)",
     config: { tension: 200, friction: 10 },
-    color: "black",
+    color: "white",
     fontWeight: "900",
     padding: "5px",
     opacity: showButton ? 1 : 0,
@@ -77,10 +77,20 @@ const Page3 = () => {
           flexDirection: "column",
         }}
       >
-        <BoxRight messageRight="¿Ya sé cuales son las partes de una variable?" />
+        <BoxRight messageRight="Ya sé cuales son las partes de una variable" />
         <animated.div style={messageProps1}>
           <BoxLeft messageLeft="Ahora puedes crear variables de tipo entero" />
         </animated.div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <animated.button
           style={buttonProps}
           className="start-button"

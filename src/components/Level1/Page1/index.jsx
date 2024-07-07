@@ -32,13 +32,13 @@ const Page1 = () => {
   });
 
   const buttonProps = useSpring({
-    background: `linear-gradient(to bottom, #FBDD86, #BB6500)`,
+    backgroundColor: "green",
     borderRadius: "8px",
+    color: "white",
     border: "none",
     cursor: "pointer",
     boxShadow: "0px 0px 20px rgba(99, 0, 134, 0.8)",
     config: { tension: 200, friction: 10 },
-    color: "black",
     fontWeight: "900",
     padding: "5px",
     opacity: showButton ? 1 : 0,
@@ -77,15 +77,15 @@ const Page1 = () => {
           flexDirection: "column",
         }}
       >
-        <BoxRight messageRight="¿Por qué es necesario aprender a diferenciar los tipos de datos?" />
+        <BoxRight messageRight="¿Qué aprenderé?" />
         <animated.div style={messageProps1}>
-          <BoxLeft messageLeft="Para aprender a declarar cada tipo de dato" />
+          <BoxLeft messageLeft="A reconocer el tipo de dato ENTERO" />
         </animated.div>
         <animated.div style={messageProps2}>
-          <BoxRight messageRight="¿Qué tipos de datos me enseñarás?" />
+          <BoxRight messageRight="¿Sólo eso?" />
         </animated.div>
         <animated.div style={messageProps3}>
-          <BoxLeft messageLeft="Empezaremos por el tipo de dato ENTERO" />
+          <BoxLeft messageLeft="También a declarar una variable tipo ENTERO" />
         </animated.div>
         <animated.button
           style={buttonProps}

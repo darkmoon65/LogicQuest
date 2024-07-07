@@ -32,13 +32,13 @@ const FelicidadesUno = ({ onClose, onContinue }) => {
     });
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      onClose();
-    }, 5000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     onClose();
+  //   }, 5000);
 
-    return () => clearTimeout(timer);
-  }, [onClose]);
+  //   return () => clearTimeout(timer);
+  // }, [onClose]);
 
   const animation = useSpring({
     config: {
@@ -94,26 +94,29 @@ const FelicidadesUno = ({ onClose, onContinue }) => {
             <button
               onClick={() => navigate("/")}
               style={{
-                width: "35px",
-                height: "35px",
+                width: "60px",
+                height: "60px",
                 fontSize: "16px",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                backgroundColor: "#5eafdd",
+                backgroundColor: "#007BD4",
                 color: "#fff",
                 border: "none",
                 borderRadius: "50px",
                 cursor: "pointer",
               }}
             >
-              <FontAwesomeIcon icon={faHome} style={{ marginRight: "px" }} />
+              <FontAwesomeIcon
+                icon={faHome}
+                style={{ marginRight: "px", fontSize: "40px" }}
+              />
             </button>
             <button
               onClick={onContinue}
               style={{
-                width: "35px",
-                height: "35px",
+                width: "60px",
+                height: "60px",
                 fontSize: "16px",
                 display: "flex",
                 alignItems: "center",
@@ -125,7 +128,10 @@ const FelicidadesUno = ({ onClose, onContinue }) => {
                 cursor: "pointer",
               }}
             >
-              <FontAwesomeIcon icon={faArrowRight} />
+              <FontAwesomeIcon
+                icon={faArrowRight}
+                style={{ marginRight: "px", fontSize: "40px" }}
+              />
             </button>
           </div>
         </div>

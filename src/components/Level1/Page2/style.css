@@ -9,8 +9,8 @@
   max-width: 400px;
   min-height: 250px;
   background-size: 300px 250px;
-  background-image: url("../../../assets/nube.png");
-  background-repeat: no-repeat;
+  /* background-image: url("../../../assets/nube.png");
+  background-repeat: no-repeat; */
 }
 .draggable {
   margin: 5px;
@@ -41,6 +41,7 @@
   border: 2px dashed #aaa;
   padding: 10px;
   margin-top: 10px;
+  background-color: rgba(207, 175, 222, 0.5); 
 }
 
 .hand-overlay {

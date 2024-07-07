@@ -7,6 +7,10 @@ import CofreGift from "../../../assets/cofre.gif";
 import CofreVacio from "../../../assets/cofre_solo.png";
 import { useNavigate } from "react-router-dom";
 import { useNumber } from "../../../contexts/index";
+import rnImage from "../../../assets/rn.png";
+import rvImage from "../../../assets/rv.png";
+import soundBueno from "../../../assets/complete_game.wav";
+import soundMalo from "../../../assets/game_over.wav";
 
 const Page4 = () => {
   const [isModalOpenRecuerda, setIsModalOpenRecuerda] = useState(false);
@@ -18,10 +22,14 @@ const Page4 = () => {
   const [valorValue, setValorValue] = useState("");
   const [isLoadingGif, setIsLoadingGif] = useState(true);
   const [showCofreVacio, setShowCofreVacio] = useState(false);
+  const [validarNombre, setValidarNombre] = useState(false);
+  const [validarNumero, setValidarNumero] = useState(false);
 
   const [fase, setFase] = useState(1);
   const navigate = useNavigate();
   const { number, updateNumber } = useNumber();
+  const audioBueno = new Audio(soundBueno);
+  const audioMalo = new Audio(soundMalo);
 
   const handleOk = () => {
     setIsModalOpenPartesVariable(true);
@@ -37,15 +45,28 @@ const Page4 = () => {
     console.log(tipoValue);
     if (tipoValue === "entero") {
       setFase(2);
+      setValidarNombre(true);
+      audioBueno.play();
+    } else {
+      audioMalo.play();
     }
   };
   const handleBlurNombre = () => {
     console.log(nombreValue);
-    setFase(3);
+    const regex = /^[^\d][^\d]*$/;
+    if (regex.test(nombreValue)) {
+      setFase(3);
+      setValidarNombre(false);
+      setValidarNumero(true);
+      audioBueno.play();
+    } else {
+      audioMalo.play();
+    }
   };
   const handleBlurValor = () => {
     setIsModalOpenPartesVariable(true);
     updateNumber(number + 1);
+    audioBueno.play();
   };
   return (
     <div style={{ color: "white", padding: "20px" }}>
@@ -63,15 +84,24 @@ const Page4 = () => {
           Declara una variable Tipo entero
         </span>
 
-        <div className="container_inputs">
+        {validarNumero && <img src={rvImage} />}
+        {validarNombre && <img src={rnImage} />}
+
+        <div style={{ display: "flex", marginBottom: "-25px" }}>
+          <span style={{ marginRight: "60px" }}>Tipo</span>
+          <span style={{ marginRight: "120px" }}>Nombre</span>
+          <span style={{ marginRight: "20px" }}>Valor</span>
+        </div>
+        <div className="container_inputs2">
           <input
             className="inputs_reto"
             id="first_input"
             style={{ width: "60px", height: "35px", borderRadius: "20px" }}
             type="text"
             value={tipoValue}
-            onChange={(e) => setTipoValue(e.target.value)}
+            onChange={(e) => setTipoValue(e.target.value.toLowerCase())}
             onBlur={handleBlurTipo}
+            placeholder="entero"
           />
           <input
             className="inputs_reto"
@@ -96,10 +126,7 @@ const Page4 = () => {
             onBlur={handleBlurValor}
           />
         </div>
-        {isLoadingGif && <img src={CofreGift} />}
-        <br />
-        <br />
-        {showCofreVacio && <img src={CofreVacio} />}
+
         <div>
           {isModalOpenRecuerda && (
             <ModalPartes
